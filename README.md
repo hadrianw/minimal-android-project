@@ -1,61 +1,24 @@
-# minimal-android-project
+Minimal Android Project
 
-This repository explores how simple it can be to set up a valid,
-working Android project. You will need:
+https://github.com/czak/minimal-android-project
 
-* One `.java` activity source file, placed in its appropriate package
-  directory
-* One `AndroidManifest.xml`
-* One `build.gradle`
-  * Certainly this is optional, as you can build the project using
-    command line tools from the Android SDK. But let's not complicate
-    things unnecessarily.
+build.gradle:
 
-For more in-depth information about this repository, see
-[my blog post](http://czak.pl/2016/01/13/minimal-android-project.html).
+a line is old:
+classpath 'com.android.tools.build:gradle:1.5.0'
+for newer as seen on: https://stackoverflow.com/questions/52145064/error-minimum-supported-gradle-version-is-4-6-in-android-studio-3-0-1/52145566
+as from: https://developer.android.com/studio/releases/gradle-plugin#updating-gradle
+1.5.0 plugin is for 2.2.1 - 2.13 gradle
 
-## How to build
+2.1.3 - 2.2.3 for gradle 2.14.1+
+and 2.3.0+ for gradle 3.3+
+Solus has gradle 3.5
+debian on crostini has gradle 3.2
 
-```
-$ git clone https://github.com/czak/minimal-android-project.git
-$ gradle installDebug
-```
+to get google repository as in: https://stackoverflow.com/questions/45781489/error6-0-gradle-dsl-method-not-found-google
 
-The app will be installed on all devices accessible to `adb`.
+this line in repositories:
+maven { url 'https://maven.google.com' }
 
-## Notes
-
-[Gradle Wrapper]: https://gradle.org/docs/current/userguide/gradle_wrapper.html
-[build.gradle]: build.gradle
-
-This project makes a few assumptions about your environment in order
-to build correctly:
-
-* You have `gradle` 2.10 installed - there is no [Gradle Wrapper][]
-  included.
-* You have `JAVA_HOME` set up. If you have `java` in your path, you
-  should be good to go.
-* You have `ANDROID_HOME` set to the root folder of your Android SDK
-  installation.
-* SDK and build tools versions are hardcoded in [build.gradle][] to
-  `23` and `23.0.2`, respectively.
-
-Additionally, the folder structure relies on the source set convention
-expected by the Gradle Android plugin:
-
-```
-project
- ├── build.gradle
- └── src
-     └── main
-         ├── AndroidManifest.xml
-         └── java
-             └── pl
-                 └── czak
-                     └── minimal
-                         └── MainActivity.java
-```
-
-## Contact
-
-Suggestions on how to minimize this further are welcome!
+bla bla bla licenses: https://stackoverflow.com/questions/39760172/you-have-not-accepted-the-license-agreements-of-the-following-sdk-components
+sdkmanager --licenses

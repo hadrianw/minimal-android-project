@@ -1,4 +1,4 @@
-package pl.czak.minimal;
+package com.hawski.minimal;
 
 import android.app.Activity;
 import android.os.Bundle;
